@@ -1,0 +1,60 @@
+#canvas1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+
+.selections {
+    background-image: url();
+    display: flex;
+    justify-content: center;
+}
+
+.selection {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: 100ms;
+}
+
+.selection:hover {
+    transform: scale(1.2:)
+}
+
+.results {
+    margin-top: 1rem;
+    display: grid;
+    justify-self: center;
+    grid-template-columns: repeat(2,1fr);
+    justify-items: center;
+    align-items: center;
+    background: black;
+}
+
+.result-score {
+margin-left: .1rem;
+font-size: .5rem;
+color: #333;
+}
+
+.result-selection{
+    opacity: .5;
+}
+
+.result-selection.winner{
+    opacity: 1;
+    font-size: 6.5rem;
+}
+
+
+ .modal-dialol {
+    background-image: url(images/desert_rock01/example_usage.png);
+    background-position: center;
+    background-repeat: no-repeat;
+} 
