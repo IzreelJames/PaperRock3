@@ -34,7 +34,7 @@ class Click {
 }
 
 const click1 = document.createElement('audio');
-click1.src = 'sound/bird_poo.flac'
+click1.src = 'sound/RPGsounds_Kenney/OGG/handleCoins.ogg'
 
 selectionButtons.forEach(selectionButton => {
     selectionButton.addEventListener('click', e => {

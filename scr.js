@@ -19,20 +19,20 @@ const game = () => {
 		playerOptions.forEach(option => {
 			option.addEventListener('click',function(){
 
-				const movesLeft = document.querySelector('.movesleft');
-				moves++;
-				movesLeft.innerText = `Moves Left: ${3-moves}`;
+				// const movesLeft = document.querySelector('.movesleft');
+				// moves++;
+				// movesLeft.innerText = `Moves Left: ${3-moves}`;
 				
 
-				const choiceNumber = Math.floor(Math.random()*3);
+				const choiceNumber = Math.floor(Math.random()*2);
 				const computerChoice = computerOptions[choiceNumber];
 
 				// Function to check who wins
 				winner(this.innerText,computerChoice)
 				
-				// Calling gameOver function after 10 moves
-				if(moves == 3){
-					gameOver(playerOptions,movesLeft);
+				// Calling gameOver function after 4 moves
+				if(playerScore == 2 || computerScore == 2){
+					gameOver(playerOptions,winner);
 				}
 			})
 		})
@@ -86,9 +86,13 @@ const game = () => {
 	}
 
 	// Function to run when game is over
-	const gameOver = (playerOptions,movesLeft) => {
+	const gameOver = (playerOptions,winner) => {
 
-		const chooseMove = document.querySelector('.move');
+
+
+		const playerScoreBoard = document.querySelector('.p-count');
+		const computerScoreBoard = document.querySelector('.c-count');
+		// const chooseMove = document.querySelector('.move');
 		const result = document.querySelector('.result');
 		const reloadBtn = document.querySelector('.reload');
 
@@ -100,16 +104,17 @@ const game = () => {
 		chooseMove.innerText = 'Game Over!!'
 		movesLeft.style.display = 'none';
 
-		if(playerScore > computerScore){
+		if(playerScore == 2   ){
 			result.style.fontSize = '2rem';
 			result.innerText = 'You Won The Game'
 			result.style.color = '#308D46';
 		}
-		else if(playerScore < computerScore){
+		else if(computerScore == 2 ) {
 			result.style.fontSize = '2rem';
 			result.innerText = 'You Lost The Game';
 			result.style.color = 'red';
 		}
+		
 		else{
 			result.style.fontSize = '2rem';
 			result.innerText = 'Tie';
